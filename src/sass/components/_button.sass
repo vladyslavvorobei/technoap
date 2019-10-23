@@ -1,0 +1,28 @@
+.button-nav
+	margin-top: 10px
+	width: 140px
+	height: 50px
+	position: relative
+	text-align: center
+	background: url('../img/custom-btn-blue.svg') center no-repeat
+	background-size: cover
+	border: none
+	transition: all .3s ease
+	flex-shrink: 0
+	+r(1199)
+		margin-right: 15px
+		margin-left: auto
+	+r(575)
+		width: 100px
+		height: 40px
+	span
+		display: block
+		position: relative
+		z-index: 1
+		font-family: $globalFont
+		color: $buttonFontColor
+		font-size: $buttonFontSize
+		+ls($buttonLatterSpacing)
+		text-shadow: 0 0 5px $buttonFontColor
+	&:hover
+		transform: translateY(2px)

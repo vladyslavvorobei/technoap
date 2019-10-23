@@ -1,0 +1,328 @@
+.header
+	position: fixed
+	left: 0
+	right: 0
+	top: 0
+	transition: all .3s ease
+	z-index: 1000
+	&--scroll
+		box-shadow: 0 0 10px 0 rgba($sanMarino, .4)
+		background-color: $globalBackgroundColor
+		.header__inner-wrapper
+			border-bottom: 1px solid transparent
+	&__container
+		width: 100%
+		padding: 0
+		position: relative
+		box-sizing: border-box
+		+rmin(1200)
+			max-width: 1540px
+	&__inner-wrapper
+		display: flex
+		align-items: flex-start
+		border-bottom: 1px solid $headerBorderColor
+		background-color: $globalBackgroundColor
+	&__nav
+		width: 100%
+		max-width: 645px
+		+r(1199)
+			left: -100vw
+			transition: all .4s ease
+	&__lang
+		margin-right: 40px
+		margin-left: auto
+		+r(1199)
+			margin-right: 20px
+.burger
+	position: relative
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 1000
+	display: flex
+	+r(1199)
+		width: auto
+	&__button
+		position: relative
+		width: 260px
+		margin-right: 70px
+		+r(1199)
+			width: auto
+			margin-right: 50px
+		+r(575)
+			margin-right: 25px
+		button
+			display: block
+			width: 260px
+			color: $burgerBtnLogoColor
+			font-size: $burgerBtnFontSize
+			background-color: $burgerBackgroundColor
+			+ls($burgerBtnLetterSpacing)
+			box-shadow: 15px 0 20px 5px rgba(207, 211, 225, 0.5)
+			text-transform: uppercase
+			line-height: 1em
+			border: none
+			font-weight: 700
+			margin-right: 0
+			padding: 23px 25px
+			z-index: 1200
+			position: relative
+			+r(575)
+				width: auto
+				padding: 20px 10px
+				font-size: 18px
+			&:before
+				content: ""
+				position: absolute
+				top: 25px
+				right: -45px
+				border-top: 20px solid $burgerBackgroundColor
+				border-left: 20px solid transparent
+				width: 70px
+				height: 0
+				transform: rotate(-90deg)
+				+r(575)
+					width: 59px
+					right: -39px
+					top: 18px
+	&__nav
+		line-height: 1em
+		+ls($burgerListLatterSpacing)
+		padding: 17px 0
+		position: absolute
+		top: calc( 100% + 1px )
+		width: 260px
+		height: calc( 100vh - 100px)
+		overflow: auto
+		left: -100vw
+		background-color: $burgerBackgroundColor
+		box-shadow: 0 10px 20px 0 rgba(207, 211, 225, 0.5)
+		transition: all .4s ease
+		+rmin(1700)
+			left: 0
+		+r(1199)
+			position: relative
+			left: 0
+			top: 0
+			height: auto
+			overflow: visible
+			background-color: transparent
+			box-shadow: none
+		li
+			& + .burger__main-link
+				margin-top: 9px
+		a
+			display: block
+			position: relative
+			color: $burgerListColor
+			font-weight: 400
+			transition: all .3s ease
+			padding: 6.5px 35px 6.5px 25px
+			&::before
+				content: ''
+				width: 4px
+				height: 100%
+				position: absolute
+				left: 0
+				top: 0
+				background-color: $burgerListColorHover
+				opacity: 0
+				transition: all .3s ease
+			&:hover
+				background-image: linear-gradient( 90deg, rgb(216,232,255) 34%, rgb(239,245,254) 60%, rgba(255, 255, 255, 0) 100%)
+				color: $burgerListColorHover
+				font-weight: 700
+				&::before
+					opacity: 1
+	&__main-link
+		a
+			font-size: $burgerMainLinkFontSize
+			color: $burgerMainLinkColor
+			font-weight: 700
+			transition: all .3s ease
+		margin-bottom: 9px
+		&:last-of-type
+			margin-bottom: 0
+	&__inner-wrapper
+		display: flex
+		width: calc( 100% - 330px)
+		+r(1199)
+			display: block
+			position: absolute
+			left: -100vw
+			width: 260px
+			height: calc( 100vh - 70px)
+			overflow: auto
+			transition: all .4s ease
+			top: calc( 100% + 1px )
+			justify-content: flex-start
+			padding-bottom: 50px
+			background-color: $burgerBackgroundColor
+			box-shadow: 0 10px 20px 0 rgba(207, 211, 225, 0.5)
+		+r(575)
+			height: calc( 100vh - 60px)
+		&--active
+			+r(1199)
+				left: 0
+			.burger__nav
+				left: 0
+.nav
+	+r(1199)
+		width: 260px
+		height: auto
+		overflow: visible
+		padding: 17px 0
+		border-bottom: 1px solid $headerBorderColor
+
+	ul
+		display: flex
+		flex-wrap: wrap
+		+r(1199)
+			display: block
+	li
+		&:last-of-type
+			a
+				margin-right: 0
+	a
+		color: $navColor
+		transition: all .3s ease
+		display: block
+		margin-right: 22px
+		line-height: 1em
+		padding: 27px 0
+		position: relative
+		+ls($navLetterSpacing)
+		text-align: center
+		+r(1450)
+			margin-right: 13px
+		+r(1199)
+			margin-right: 0
+			display: block
+			position: relative
+			color: $burgerListColor
+			font-weight: 400
+			transition: all .3s ease
+			padding: 6.5px 35px 6.5px 25px
+			text-align: left
+		&::before
+			content: ''
+			width: 100%
+			height: 2px
+			bottom: -1px
+			left: 0
+			position: absolute
+			background-color: $navColorHover
+			opacity: 0
+			transition: all .3s ease
+			+r(1199)
+				content: ''
+				width: 4px
+				height: 100%
+				position: absolute
+				left: 0
+				top: 0
+				background-color: $burgerListColorHover
+				opacity: 0
+				transition: all .3s ease
+		&:hover
+			color: $navColorHover
+			&::before
+				opacity: 1
+			+r(1199)
+				background-image: linear-gradient( 90deg, rgb(216,232,255) 34%, rgb(239,245,254) 60%, rgba(255, 255, 255, 0) 100%)
+				color: $burgerListColorHover
+				font-weight: 700
+				&::before
+					opacity: 1
+	&--active
+		a
+			color: $navColorHover
+			&::before
+				opacity: 1
+.lang-list
+	+r(1199)
+		width: 260px
+		padding: 17px 0
+		border-top: 1px solid $headerBorderColor
+		margin-right: 0
+		margin-left: 0
+		z-index: 1
+		position: relative
+		height: auto
+		overflow: visible
+	&__result
+		color: $navColor
+		transition: all .3s ease
+		display: block
+		min-width: 55px
+		text-align: center
+		line-height: 1em
+		padding: 27px 0
+		position: relative
+		background-color: transparent
+		border: none
+		font-family: $globalFont
+		font-size: $globalFontSize
+		+ls($navLetterSpacing)
+		+r(1199)
+			display: none
+		&::before
+			content: ''
+			width: 100%
+			height: 2px
+			bottom: -1px
+			left: 0
+			position: absolute
+			background-color: $navColorHover
+			opacity: 0
+			transition: all .3s ease
+		&:hover
+			color: $navColorHover
+			&::before
+				opacity: 1
+	&__list
+		position: absolute
+		display: none
+		top: 100%
+		height: auto
+		width: 55px
+		text-align: center
+		background-color: rgb(216,232,255)
+		+ls($navLetterSpacing)
+		+r(1199)
+			display: flex
+			justify-content: space-between
+			flex-wrap: wrap
+			position: relative
+			padding: 6.5px 35px 6.5px 25px
+			width: auto
+			background-color: transparent
+		a
+			color: $navColorHover
+			transition: all .3s ease
+			position: relative
+			line-height: 1em
+			display: block
+			padding: 10px 13px
+			&::before
+				content: ''
+				width: 2px
+				height: 100%
+				position: absolute
+				left: 0
+				top: 0
+				background-color: $burgerListColorHover
+				opacity: 0
+				transition: all .3s ease
+			&:hover
+				color: $burgerListColorHover
+				font-weight: 700
+				&::before
+					opacity: 1
+		&--active
+			background-color: rgba($burgerListColorHover, .1)
+			font-weight: 700
+			&::before
+				opacity: 0
+
+

@@ -1,0 +1,26 @@
+h2
+
+	&.title
+		margin: 0 0 30px
+		position: relative
+		font-size: 28px
+		color: $h2TitleFontColor
+		padding: 16px 40px
+		line-height: 1em
+		background-color: $h2TitleBackgroundColor
+		font-weight: 400
+		&:before, &:after
+			content: ''
+			position: absolute
+			left: 0
+			width: 100%
+			height: 0
+			z-index: 100
+		&:before
+			top: 0
+			border-bottom: 22px solid transparent
+			border-left: 20px solid $globalBackgroundColor
+		&:after
+			bottom: 0
+			border-top: 22px solid transparent
+			border-right: 20px solid $globalBackgroundColor

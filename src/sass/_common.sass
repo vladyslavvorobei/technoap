@@ -1,0 +1,53 @@
+body
+	font-family: $globalFont
+	font-weight: 400
+	font-style: normal
+	font-size: $globalFontSize
+	background: url('../img/bg-img.png') left top no-repeat  $globalBackgroundColor
+	line-height: 1.5em
+	overflow-x: hidden
+	position: relative
+	min-width: 320px
+	margin: 70px 0 0
+	padding: 0
+	height: 100%
+	+r(575)
+		margin: 60px 0 0
+
+*
+	&::after,
+	&::before
+		-webkit-box-sizing: border-box
+		box-sizing: border-box
+
+ul
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+a
+	text-decoration: none
+
+section
+	position: relative
+
+button
+	outline: none
+	cursor: pointer
+
+.container
+	width: 100%
+	padding-right: 15px
+	padding-left: 15px
+	margin-right: auto
+	margin-left: auto
+	position: relative
+	box-sizing: border-box
+	+rmin(576)
+		max-width: 540px
+	+rmin(768)
+		max-width: 720px
+	+rmin(992)
+		max-width: 960px
+	+rmin(1200)
+		max-width: 1270px

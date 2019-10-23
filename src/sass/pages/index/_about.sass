@@ -1,0 +1,96 @@
+.about
+	padding: 20px 0
+	&__inner-wrapper
+		display: flex
+		+r(991)
+			flex-direction: column
+	&__info
+		column-count: 2
+		column-gap: 40px
+		padding: 60px 80px 60px 20px
+		position: relative
+		border-top: 1px solid $headerBorderColor
+		+r(1199)
+			column-count: 1
+			padding: 50px 70px 50px 20px
+		+r(991)
+			padding: 20px
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			width: 320px
+			height: 0
+			z-index: 100
+			top: -1px
+			border-top: 5px solid $customScrollColor
+			border-right: 5px solid $globalBackgroundColor
+			+r(575)
+				width: 100px
+		p
+			margin: 0 0 40px
+			font-size: 28px
+			color: $newsTextColor
+			line-height: 1.2em
+			&:last-of-type
+				margin-bottom: 0
+			+r(1199)
+				font-size: 24px
+			+r(991)
+				font-size: 20px
+				margin-bottom: 20px
+			+r(767)
+				font-size: 18px
+		strong
+			font-weight: 400
+			color: $newsStrongTextColor
+			background-color: $newsStrongBackgroundColor
+	&__image
+		flex-shrink: 0
+		position: relative
+		top: -1px
+		max-width: 500px
+		height: auto
+		+r(1199)
+			max-width: 50%
+		+r(991)
+			max-width: none
+			max-height: 350px
+			overflow: hidden
+		&:before, &:after
+			content: ''
+			position: absolute
+			left: 0
+			width: 100%
+			height: 0
+			z-index: 100
+		&:before
+			top: 0
+			border-bottom: 22px solid transparent
+			border-left: 20px solid $globalBackgroundColor
+		&:after
+			bottom: 0
+			border-top: 22px solid transparent
+			border-right: 20px solid $globalBackgroundColor
+		a
+			&.button
+				position: absolute
+				right: 0
+				bottom: 0
+				font-family: $globalFont
+				font-size: 14px
+				color: $cadetBlue
+				width: 140px
+				height: 50px
+				background: url('../img/custom-btn.svg') center no-repeat
+				background-size: contain
+				display: flex
+				justify-content: center
+				align-items: center
+				z-index: 120
+				+ls(100)
+
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover

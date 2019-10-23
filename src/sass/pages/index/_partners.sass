@@ -1,0 +1,20 @@
+.partners
+	padding: 20px 0
+	&__list
+		display: grid
+		grid-template-columns: repeat(4, 1fr)
+		grid-gap: 20px
+		+r(1199)
+			grid-template-columns: repeat(3,1fr)
+		+r(767)
+			grid-template-columns: repeat(2, 1fr)
+		li
+			border: 1px solid $headerBorderColor
+			img
+				width: 100%
+				height: auto
+				object-fit: contain
+				filter: grayscale(1)
+				transition: all .3s ease
+				&:hover
+					filter: grayscale(0)

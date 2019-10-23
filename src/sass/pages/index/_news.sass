@@ -1,0 +1,97 @@
+.news
+	padding: 20px 0
+	&__container
+		max-height: 555px
+	&__link
+		display: flex
+		align-items: flex-start
+		position: relative
+		align-self: stretch
+		border-bottom: 1px solid $headerBorderColor
+		&:hover
+			.news__time
+				background-color: $sanMarino
+				time
+					color: $white
+		&:last-of-type
+			border-bottom: none
+		&:first-child
+			.news__time
+				&::before
+					content: ''
+		&:last-child
+			.news__time
+				&::after
+					content: ''
+	&__time
+		display: flex
+		justify-content: center
+		align-items: center
+		align-self: inherit
+		width: 110px
+		flex-direction: column
+		position: relative
+		z-index: 1
+		background-color: rgba($sanMarino, 0.05)
+		transition: all .3s ease
+		flex-shrink: 0
+		+r(575)
+			width: 80px
+		&:before, &:after
+			position: absolute
+			left: 0
+			width: 100%
+			height: 0
+			z-index: 100
+		&:before
+			top: 0
+			border-bottom: 22px solid transparent
+			border-left: 20px solid $globalBackgroundColor
+		&:after
+			bottom: 0
+			border-top: 22px solid transparent
+			border-right: 20px solid $globalBackgroundColor
+
+
+		time
+			+ls(100)
+			color: $newsTextColor
+			transition: all .3s ease
+			&:first-child
+				position: absolute
+				right: 10px
+				top: 10px
+				font-size: 16px
+			&:last-child
+				font-size: 18px
+				font-weight: 700
+	&__title
+		font-size: 24px
+		color: $newsTextColor
+		line-height: 1.2em
+		font-weight: 400
+		margin: 0
+		padding: 27px 140px 27px 40px
+		+r(991)
+			font-size: 20px
+			padding: 20px 70px 20px 30px
+		+r(767)
+			font-size: 18px
+			padding: 20px 60px 20px 30px
+		+r(575)
+			font-size: 16px
+			padding: 20px 40px 20px 20px
+		strong
+			font-weight: 400
+			color: $newsStrongTextColor
+			background-color: $newsStrongBackgroundColor
+	.simplebar
+		&-scrollbar
+			width: 4px
+		&-visible
+			&::before
+				background-color: $customScrollColor
+				opacity: 1
+				border-radius: 0
+
+

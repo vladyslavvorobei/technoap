@@ -1,0 +1,121 @@
+.footer
+	padding-top: 20px
+	&__inner-wrapper
+		//background-color: $footerBackgroundColor
+		background-image: linear-gradient( 45deg, rgb(72,113,163) 0%, rgb(62,95,136) 100%);
+		position: relative
+		overflow: hidden
+		&:before, &:after
+			content: ''
+			position: absolute
+			left: 0
+			width: 100%
+			height: 0
+			z-index: 100
+		&:before
+			top: 0
+			border-bottom: 22px solid transparent
+			border-left: 20px solid $globalBackgroundColor
+		&:after
+			bottom: 0
+			border-top: 22px solid transparent
+			border-right: 20px solid $globalBackgroundColor
+	&__content
+		display: flex
+		align-items: flex-start
+		padding: 40px 60px
+		justify-content: space-between
+		flex-wrap: wrap
+		position: relative
+		z-index: 1
+		+r(575)
+			padding: 30px 25px
+	&__residence
+		flex-shrink: 0
+		width: 100%
+		max-width: 220px
+		height: auto
+		+r(991)
+			margin: 0 auto
+	&__contacts
+		display: flex
+		flex-wrap: wrap
+		margin-right: 80px
+		margin-bottom: 20px
+		+r(1199)
+			width: 50%
+		+r(991)
+			width: 100%
+			margin-right: 0
+		+r(575)
+			text-align: center
+			justify-content: center
+	&__info
+		margin-right: 50px
+		+r(575)
+			margin-right: 0
+			width: 100%
+		&:last-of-type
+			margin-right: 0
+		h3, p, a
+			color: $hawkesBlue
+		h3
+			font-size: 14px
+			font-weight: 400
+			line-height: 1em
+			margin: 0 0 15px
+			+ls(100)
+			+r(575)
+				margin-bottom: 10px
+		p
+			margin: 0 0 20px
+			line-height:  1em
+			font-size: 24px
+			font-weight: 700
+			+r(575)
+				font-size: 18px
+				margin-bottom: 15px
+		a
+			transition: all .3s ease
+			&:hover
+				color: $cadetBlue
+	&__copyright
+		position: relative
+		padding: 18px 60px
+		+r(575)
+			padding: 18px 25px
+		&::before
+			content: ''
+			width: 100%
+			height: 1px
+			background-color: $footerFontColor
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 1
+		h1
+			position: absolute
+			left: 0
+			bottom: -55px
+			font-weight: 400
+			margin: 0
+			line-height: 1em
+			color: $copirightTitleColor
+			+ls(-20)
+			font-size: 240px
+			+r(991)
+				font-size: 180px
+				bottom: -40px
+			+r(575)
+				font-size: 140px
+				bottom: -25px
+		p
+			position: relative
+			text-align: right
+			color: $footerFontColor
+			margin: 0
+			font-size: 14px
+			+ls(100)
+			+r(575)
+				text-align: center
+
